@@ -1,3 +1,4 @@
+let buttonBook = document.querySelector('#book-button')
 let mainLibrary = [];
 
 function Book(title, author, pages, isRead) {
@@ -24,3 +25,7 @@ function addBookToLibrary() {
   mainLibrary.push(book);
   book = {};
 }
+
+buttonBook.addEventListener('click', () => {
+    addBookToLibrary();
+})

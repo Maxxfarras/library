@@ -19,6 +19,21 @@
       <button id="book-button">Add new book</button>
       <button id="login">Login</button>
     </aside>
-    <main>main</main>
+    <main>
+        <dialog open>
+            <form action="get" method="dialog">
+                <div id="form-title">Add new book:</div>
+                <label for="title-book" class="form-label">Title:</label>
+                <input type="text" class="input-text" name="title-book" required>
+                <label for="author-book" class="form-label">Author:</label>
+                <input type="text" class="input-text" name="author-book" required>
+                <label for="pages-book">Pages:</label>
+                <input type="number" id="input-number" name="pages-book" required>
+                <label for="isRead" class="form-label">Have you read it?</label>
+                <input type="checkbox" id="input-checkbox" name="isRead-book" required>
+                <button type="submit">Submit</button>
+            </form>
+        </dialog>
+    </main>
   </body>
 </html>
