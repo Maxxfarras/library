@@ -24,8 +24,3 @@ function addBookToLibrary() {
   mainLibrary.push(book);
   book = {};
 }
-
-addBookToLibrary();
-addBookToLibrary();
-addBookToLibrary();
-console.log(mainLibrary);
