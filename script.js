@@ -1,4 +1,5 @@
 let buttonBook = document.querySelector('#book-button')
+let dialog = document.querySelector('dialog')
 let mainLibrary = [];
 
 function Book(title, author, pages, isRead) {
@@ -27,5 +28,5 @@ function addBookToLibrary() {
 }
 
 buttonBook.addEventListener('click', () => {
-    addBookToLibrary();
+   dialog.showModal(); 
 })
