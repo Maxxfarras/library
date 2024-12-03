@@ -2,7 +2,9 @@
   Josh's Custom CSS Reset
   https://www.joshwcomeau.com/css/custom-css-reset/
 */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 * {
@@ -12,30 +14,50 @@ body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
-img, picture, video, canvas, svg {
+img,
+picture,
+video,
+canvas,
+svg {
   display: block;
   max-width: 100%;
 }
-input, button, textarea, select {
+input,
+button,
+textarea,
+select {
   font: inherit;
 }
-p, h1, h2, h3, h4, h5, h6 {
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   overflow-wrap: break-word;
 }
-#root, #__next {
+#root,
+#__next {
   isolation: isolate;
 }
 
 /*My css*/
 
 body {
-    display: grid;
-    grid-template-rows: 100vh;
-    grid-template-columns: 20vw 80vw;
+  display: grid;
+  grid-template-rows: 100vh;
+  grid-template-columns: 30vw 70vw;
 }
 
 aside {
+  background-color: rgb(80, 80, 177);
+  display: grid;
+  grid-template-rows: 20% 20% 20%;
+  align-content: center;
+  align-items: center;
 }
 
 main {
+  background-color: rgb(218, 94, 94);
 }
