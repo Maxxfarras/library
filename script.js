@@ -10,7 +10,7 @@ function Book(title, author, pages, isRead) {
   this.pages = pages;
   this.isRead = isRead;
 }
-
+//doesn't work, just for the pseudocode
 function addBookToLibrary() {
   let title;
   let author;
@@ -40,6 +40,9 @@ form.addEventListener("submit", (event) => {
   let author = formData.get("author-book");
   let pages = formData.get("pages-book");
   let isRead = formData.get("isRead-book");
+  let book = new Book(title, author, pages, isRead);
+  mainLibrary.push(book);
+  console.log(mainLibrary);
   form.reset();
   dialog.close();
 });
