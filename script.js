@@ -4,7 +4,7 @@ let form = document.querySelector("#book-form");
 let dialog = document.querySelector("dialog");
 let mainLibrary = [];
 
-function Book(title, author, pages, isRead, comment) {
+function Book(title, author, pages, isRead, comment) { //object constructor
   this.title = title;
   this.author = author;
   this.pages = pages;
@@ -26,7 +26,6 @@ form.addEventListener("submit", (event) => {
   let comment = formData.get("comment-book")
   isRead === null ? (isRead = "Not Read") : (isRead = "Read"); //to avoid null
   let book = new Book(title, author, pages, isRead, comment);
-  mainLibrary.push(book); //fix this
   createCard(book);
   form.reset();
   dialog.close();
@@ -51,3 +50,11 @@ function createCard(book) {
   `;
   container.appendChild(bookCard);
 }
+
+//event listeners for delete button 
+document.querySelector('#main-container').addEventListener('click', (event) => {
+  if(event.target.classList.contains('delete-button')) { //checks the whole container for divs with .delete-button
+    let card = event.target.closest('.book-card') //selects the nearest ancestor
+    card.remove();
+  }
+})
