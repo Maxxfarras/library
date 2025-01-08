@@ -39,6 +39,11 @@ function createCard(book) {
   let container = document.querySelector('#main-container')
   let bookCard = document.createElement('div');
   bookCard.classList.toggle('book-card')
-  bookCard.textContent = `Title: ${book.title}`;
+  bookCard.innerHTML = `
+  <div>Title: ${book.title}</div>
+  <div>Author: ${book.author}</div>
+  <div>Pages: ${book.pages}</div>
+  <div>${book.isRead}</div>
+  `;
   container.appendChild(bookCard);
 }
