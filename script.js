@@ -40,9 +40,9 @@ form.addEventListener("submit", (event) => {
   let author = formData.get("author-book");
   let pages = formData.get("pages-book");
   let isRead = formData.get("isRead-book");
+  isRead === null ? isRead = 'Not Read' : isRead = 'Read';
   let book = new Book(title, author, pages, isRead);
   mainLibrary.push(book);
-  console.log(mainLibrary);
   form.reset();
   dialog.close();
 });
