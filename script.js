@@ -22,8 +22,8 @@ form.addEventListener("submit", (event) => {
   let author = formData.get("author-book");
   let pages = formData.get("pages-book");
   let isRead = formData.get("isRead-book");
-  isRead === null ? isRead = 'Not Read' : isRead = 'Read'; //to avoid null
-  let book = new Book(title, author, pages, isRead); 
+  isRead === null ? (isRead = "Not Read") : (isRead = "Read"); //to avoid null
+  let book = new Book(title, author, pages, isRead);
   mainLibrary.push(book);
   createCard(book);
   form.reset();
@@ -36,9 +36,9 @@ buttonCancel.addEventListener("click", () => {
 });
 
 function createCard(book) {
-  let container = document.querySelector('#main-container')
-  let bookCard = document.createElement('div');
-  bookCard.classList.toggle('book-card')
+  let container = document.querySelector("#main-container");
+  let bookCard = document.createElement("div");
+  bookCard.classList.toggle("book-card");
   bookCard.innerHTML = `
   <div>Title: ${book.title}</div>
   <div>Author: ${book.author}</div>
