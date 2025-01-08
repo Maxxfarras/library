@@ -10,39 +10,22 @@ function Book(title, author, pages, isRead) {
   this.pages = pages;
   this.isRead = isRead;
 }
-//doesn't work, just for the pseudocode
-function addBookToLibrary() {
-  let title;
-  let author;
-  let pages;
-  let isRead;
-  title = prompt("Title:");
-  author = prompt("Author:");
-  pages = prompt("Pages:");
-  while (pages % 1 != 0 || pages < 1) {
-    alert("Should enter a correct value");
-    pages = prompt("Pages:");
-  }
-  isRead = confirm("Have you read it?");
-  let book = new Book(title, author, pages, isRead);
-  mainLibrary.push(book);
-  book = {};
-}
 
 buttonBook.addEventListener("click", () => {
   dialog.showModal();
 });
 
 form.addEventListener("submit", (event) => {
-  event.preventDefault();
+  event.preventDefault(); //prevent server connection
   let formData = new FormData(form);
   let title = formData.get("title-book");
   let author = formData.get("author-book");
   let pages = formData.get("pages-book");
   let isRead = formData.get("isRead-book");
-  isRead === null ? isRead = 'Not Read' : isRead = 'Read';
-  let book = new Book(title, author, pages, isRead);
+  isRead === null ? isRead = 'Not Read' : isRead = 'Read'; //to avoid null
+  let book = new Book(title, author, pages, isRead); 
   mainLibrary.push(book);
+  createCard(book);
   form.reset();
   dialog.close();
 });
@@ -51,3 +34,11 @@ buttonCancel.addEventListener("click", () => {
   dialog.close();
   form.reset();
 });
+
+function createCard(book) {
+  let container = document.querySelector('#main-container')
+  let bookCard = document.createElement('div');
+  bookCard.classList.toggle('book-card')
+  bookCard.textContent = `Title: ${book.title}`;
+  container.appendChild(bookCard);
+}
