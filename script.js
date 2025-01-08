@@ -4,11 +4,12 @@ let form = document.querySelector("#book-form");
 let dialog = document.querySelector("dialog");
 let mainLibrary = [];
 
-function Book(title, author, pages, isRead) {
+function Book(title, author, pages, isRead, comment) {
   this.title = title;
   this.author = author;
   this.pages = pages;
   this.isRead = isRead;
+  this.comment = comment;
 }
 
 buttonBook.addEventListener("click", () => {
@@ -22,8 +23,9 @@ form.addEventListener("submit", (event) => {
   let author = formData.get("author-book");
   let pages = formData.get("pages-book");
   let isRead = formData.get("isRead-book");
+  let comment = formData.get("comment-book")
   isRead === null ? (isRead = "Not Read") : (isRead = "Read"); //to avoid null
-  let book = new Book(title, author, pages, isRead);
+  let book = new Book(title, author, pages, isRead, comment);
   mainLibrary.push(book);
   createCard(book);
   form.reset();
@@ -44,6 +46,7 @@ function createCard(book) {
   <div>Author: ${book.author}</div>
   <div>Pages: ${book.pages}</div>
   <div>${book.isRead}</div>
+  <div>${book.comment}</div>
   `;
   container.appendChild(bookCard);
 }
