@@ -26,7 +26,7 @@ form.addEventListener("submit", (event) => {
   let comment = formData.get("comment-book")
   isRead === null ? (isRead = "Not Read") : (isRead = "Read"); //to avoid null
   let book = new Book(title, author, pages, isRead, comment);
-  mainLibrary.push(book);
+  mainLibrary.push(book); //fix this
   createCard(book);
   form.reset();
   dialog.close();
@@ -47,6 +47,7 @@ function createCard(book) {
   <div>Pages: ${book.pages}</div>
   <div>${book.isRead}</div>
   <div>${book.comment}</div>
+  <button class='delete-button'>Delete</button>
   `;
   container.appendChild(bookCard);
 }
