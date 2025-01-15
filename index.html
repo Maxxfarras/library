@@ -23,18 +23,9 @@
       <dialog>
         <form action="get" method="dialog" id="book-form">
           <div id="form-title">Add new book:</div>
-          <label class="form-label">
-            Title:
-            <input type="text" name="title-book" required />
-          </label>
-          <label class="form-label">
-            Author:
-            <input type="text" name="author-book" required />
-          </label>
-          <label class="form-label">
-            Pages:
-            <input type="number" name="pages-book" required />
-          </label>
+          <input type="text" name="title-book" placeholder="Title" required />
+          <input type="text" name="author-book" placeholder="Author" required />
+          <input type="number" name="pages-book" placeholder="Pages" required />
           <label class="form-label">
             Have you read it?
             <input type="checkbox" id="input-checkbox" name="isRead-book" />
