@@ -43,6 +43,14 @@ h6 {
 }
 
 /*My css*/
+:root {
+  --black: #342E37;
+  --white: #FAFFFD;
+  --blue: #3C91E6;
+  --green: #A2D729;
+  --orange: #FA824C;
+  font-family: K2D, arial;
+}
 
 body {
   display: grid;
@@ -51,7 +59,7 @@ body {
 }
 
 aside {
-  background-color: rgb(80, 80, 177);
+  background-color: rgb(142, 142, 243);
   display: grid;
   grid-template-rows: 20% 20% 20%;
   align-content: center;
