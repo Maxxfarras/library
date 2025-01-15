@@ -2,7 +2,7 @@ let buttonBook = document.querySelector("#book-button");
 let buttonCancel = document.querySelector("#cancel");
 let form = document.querySelector("#book-form");
 let dialog = document.querySelector("dialog");
-let mainLibrary = [];
+let bookCount = 0;
 
 function Book(title, author, pages, isRead, comment) {
   //object constructor
@@ -14,7 +14,11 @@ function Book(title, author, pages, isRead, comment) {
 }
 
 buttonBook.addEventListener("click", () => {
-  dialog.showModal();
+  if (bookCount < 9) {
+    dialog.showModal();
+  } else {
+    alert("You have reached the book limit, delete some books.");
+  }
 });
 
 form.addEventListener("submit", (event) => {
@@ -28,6 +32,7 @@ form.addEventListener("submit", (event) => {
   isRead === null ? (isRead = "Not Read") : (isRead = "Read"); //to avoid null
   let book = new Book(title, author, pages, isRead, comment);
   createCard(book);
+  bookCount += 1;
   form.reset();
   dialog.close();
 });
@@ -58,5 +63,6 @@ document.querySelector("#main-container").addEventListener("click", (event) => {
     //checks the whole container for divs with .delete-button
     let card = event.target.closest(".book-card"); //selects the nearest ancestor
     card.remove();
+    bookCount -= 1;
   }
 });
