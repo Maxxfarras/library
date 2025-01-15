@@ -49,7 +49,9 @@ h6 {
   --blue: #3C91E6;
   --green: #A2D729;
   --orange: #FA824C;
+  --border-radius: 20px;
   font-family: K2D, arial;
+  font-size: 20px;
 }
 
 body {
@@ -59,15 +61,30 @@ body {
 }
 
 aside {
-  background-color: rgb(142, 142, 243);
+  background-color: var(--blue);
   display: grid;
   grid-template-rows: 20% 20% 20%;
   align-content: center;
   align-items: center;
 }
 
+#title {
+  justify-self: center;
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+aside > button {
+  justify-self: center;
+  width: 70%;
+  height: 50%;
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 1.3rem;
+}
+
 main {
-  background-color: rgb(218, 94, 94);
+  background-color: var(--black);
 }
 
 #main-container {
@@ -83,7 +100,7 @@ main {
 .book-card {
   width: 80%;
   height: 80%;
-  background-color: white;
+  background-color: var(--white); 
   border-radius: 20px;
   padding: 5%;
 }
