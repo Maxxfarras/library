@@ -44,11 +44,11 @@ h6 {
 
 /*My css*/
 :root {
-  --black: #342E37;
-  --white: #FAFFFD;
-  --blue: #3C91E6;
-  --green: #A2D729;
-  --orange: #FA824C;
+  --black: #342e37;
+  --white: #fafffd;
+  --blue: #3c91e6;
+  --green: #a2d729;
+  --orange: #fa824c;
   --border-radius: 20px;
   font-family: K2D, arial;
   font-size: 20px;
@@ -81,6 +81,13 @@ aside > button {
   border: none;
   border-radius: var(--border-radius);
   font-size: 1.3rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+aside > button:hover {
+  background-color: var(--green);
+  transform: scale(1.05);
 }
 
 dialog {
@@ -91,12 +98,54 @@ dialog {
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 30px;
+  background-color: var(--white);
+  border-radius: var(--border-radius);
 }
 
 form {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  font-size: 1.1rem;
+}
+
+#form-title {
+  font-size: 1.5rem;
+}
+
+input[type="text"],
+input[type="number"],
+textarea {
+  border-radius: 8px;
+  border-width: 2px;
+}
+
+.form-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+input[type="checkbox"] {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  accent-color: var(--green);
+}
+
+form > button {
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#submit:hover {
+  background-color: var(--green);
+  transform: scale(1.05);
+}
+
+#cancel:hover {
+  background-color: rgb(255, 89, 89);
+  transform: scale(1.05);
 }
 
 main {
@@ -116,7 +165,7 @@ main {
 .book-card {
   width: 80%;
   height: 80%;
-  background-color: var(--white); 
+  background-color: var(--white);
   border-radius: 20px;
   padding: 5%;
 }
