@@ -13,6 +13,15 @@ function Book(title, author, pages, isRead, comment) {
   this.comment = comment;
 }
 
+Book.prototype.sayHi = document
+  .querySelector("#main-container")
+  .addEventListener("click", (event) => {
+    if (event.target.classList.contains("isRead-button")) {
+      const isReadButton = document.querySelector(".isRead-button");
+      alert(this.isRead);
+    }
+  });
+
 buttonBook.addEventListener("click", () => {
   if (bookCount < 9) {
     dialog.showModal();
@@ -50,7 +59,7 @@ function createCard(book) {
   <div>Title: ${book.title}</div>
   <div>Author: ${book.author}</div>
   <div>Pages: ${book.pages}</div>
-  <div>${book.isRead}</div>
+  <button class='isRead-button'>${book.isRead}</button>
   <div>${book.comment}</div>
   <button class='delete-button'>Delete</button>
   `;
