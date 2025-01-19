@@ -70,6 +70,12 @@ function createCard(book) {
   <button class='delete-button'>Delete</button>
   `;
   container.appendChild(bookCard);
+  let isReadButton = bookCard.querySelector(".isRead-button");
+  if (book.isRead === "Read") {
+    isReadButton.style.backgroundColor = "#a2d729";
+  } else {
+    isReadButton.style.backgroundColor = "#fafffd";
+  }
 }
 
 //event listeners for delete button
