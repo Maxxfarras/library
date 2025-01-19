@@ -61,6 +61,7 @@ body {
 }
 
 button {
+  background-color: var(--white);
   border: none;
   border-radius: var(--border-radius);
   cursor: pointer;
@@ -143,7 +144,7 @@ input[type="checkbox"] {
 }
 
 #cancel:hover,
- .book-card > button:hover{
+.delete-button:hover{
   background-color: rgb(255, 89, 89);
 }
 

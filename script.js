@@ -13,15 +13,17 @@ function Book(title, author, pages, isRead, comment) {
   this.comment = comment;
 }
 
-Book.prototype.sayHi = document
+Book.prototype.buttonColorChange = document
   .querySelector("#main-container") //checks whole container for the .isRead-button
   .addEventListener("click", (event) => {
     if (event.target.classList.contains("isRead-button")) {
-      const isReadButton = event.target; //need to link the button to the object
+      const isReadButton = event.target;
       if (isReadButton.textContent === "Read") {
         isReadButton.textContent = "Not Read";
+        isReadButton.style.backgroundColor = "#fafffd";
       } else {
         isReadButton.textContent = "Read";
+        isReadButton.style.backgroundColor = "#a2d729";
       }
     }
   });
