@@ -136,15 +136,13 @@ input[type="checkbox"] {
   accent-color: var(--green);
 }
 
-
-
 #submit:hover,
- aside > button:hover {
- background-color: var(--green);
+aside > button:hover {
+  background-color: var(--green);
 }
 
 #cancel:hover,
-.delete-button:hover{
+.delete-button:hover {
   background-color: rgb(255, 89, 89);
 }
 
@@ -153,6 +151,7 @@ input[type="checkbox"] {
   display: grid;
   height: 100%;
   width: 100%;
+  padding: 10px;
   grid-template-rows: repeat(3, 1fr);
   grid-template-columns: repeat(3, 1fr);
   align-items: center;
