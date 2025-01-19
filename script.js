@@ -17,8 +17,9 @@ Book.prototype.buttonColorChange = document
   .querySelector("#main-container") //checks whole container for the .isRead-button
   .addEventListener("click", (event) => {
     if (event.target.classList.contains("isRead-button")) {
-      const isReadButton = event.target;
+      const isReadButton = event.target; //when in click
       if (isReadButton.textContent === "Read") {
+        //toggle color depending on the textContent
         isReadButton.textContent = "Not Read";
         isReadButton.style.backgroundColor = "#fafffd";
       } else {
@@ -28,6 +29,7 @@ Book.prototype.buttonColorChange = document
     }
   });
 
+//to avoid content overflowing, limit 9 cards
 buttonBook.addEventListener("click", () => {
   if (bookCount < 9) {
     dialog.showModal();
@@ -36,6 +38,7 @@ buttonBook.addEventListener("click", () => {
   }
 });
 
+//event listener on submit dialog
 form.addEventListener("submit", (event) => {
   event.preventDefault(); //prevent server connection
   let formData = new FormData(form);
@@ -52,6 +55,7 @@ form.addEventListener("submit", (event) => {
   dialog.close();
 });
 
+//event listener to cancel dialog
 buttonCancel.addEventListener("click", () => {
   dialog.close();
   form.reset();
@@ -65,12 +69,12 @@ function createCard(book) {
   <div>Title: ${book.title}</div>
   <div>Author: ${book.author}</div>
   <div>Pages: ${book.pages}</div>
-  <button class='isRead-button'>${book.isRead}</button>
   <div>${book.comment}</div>
+  <button class='isRead-button'>${book.isRead}</button>
   <button class='delete-button'>Delete</button>
-  `;
+  `; //Create card based on book data
   container.appendChild(bookCard);
-  let isReadButton = bookCard.querySelector(".isRead-button");
+  let isReadButton = bookCard.querySelector(".isRead-button"); //sets default color on the isRead-button
   if (book.isRead === "Read") {
     isReadButton.style.backgroundColor = "#a2d729";
   } else {
