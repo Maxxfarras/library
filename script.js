@@ -14,11 +14,15 @@ function Book(title, author, pages, isRead, comment) {
 }
 
 Book.prototype.sayHi = document
-  .querySelector("#main-container")
+  .querySelector("#main-container") //checks whole container for the .isRead-button
   .addEventListener("click", (event) => {
     if (event.target.classList.contains("isRead-button")) {
-      const isReadButton = document.querySelector(".isRead-button");
-      alert(this.isRead);
+      const isReadButton = event.target; //need to link the button to the object
+      if (isReadButton.textContent === "Read") {
+        isReadButton.textContent = "Not Read";
+      } else {
+        isReadButton.textContent = "Read";
+      }
     }
   });
 
