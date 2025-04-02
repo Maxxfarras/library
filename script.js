@@ -4,6 +4,7 @@ let form = document.querySelector("#book-form");
 let dialog = document.querySelector("dialog");
 let bookCount = 0;
 
+/*
 function Book(title, author, pages, isRead, comment) {
   //object constructor
   this.title = title;
@@ -12,7 +13,36 @@ function Book(title, author, pages, isRead, comment) {
   this.isRead = isRead;
   this.comment = comment;
 }
+*/
 
+class Book {
+  constructor(title, author, pages, isRead, comment) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.isRead = isRead;
+    this.comment = comment;
+    document
+      .querySelector("#main-container")
+      .addEventListener("click", this.buttonColorChange);
+  }
+
+  buttonColorChange(event) {
+    if (event.target.classList.contains("isRead-button")) {
+      const isReadButton = event.target; //when in click
+      if (isReadButton.textContent === "Read") {
+        //toggle color depending on the textContent
+        isReadButton.textContent = "Not Read";
+        isReadButton.style.backgroundColor = "#fafffd";
+      } else {
+        isReadButton.textContent = "Read";
+        isReadButton.style.backgroundColor = "#a2d729";
+      }
+    }
+  }
+}
+
+/*
 Book.prototype.buttonColorChange = document
   .querySelector("#main-container") //checks whole container for the .isRead-button
   .addEventListener("click", (event) => {
@@ -28,6 +58,7 @@ Book.prototype.buttonColorChange = document
       }
     }
   });
+  */
 
 //to avoid content overflowing, limit 9 cards
 buttonBook.addEventListener("click", () => {
